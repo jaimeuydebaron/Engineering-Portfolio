@@ -133,7 +133,15 @@ function openProjectModal(card) {
   const desc    = card.dataset.desc    || '';
   const outcome = card.dataset.outcome || '';
   const github  = card.dataset.github  || '';
+  const logo    = card.dataset.logo    || '';
   const tags    = card.dataset.tags    ? card.dataset.tags.split(',') : [];
+  const responsibilities = card.dataset.responsibilities || '';
+  const learnings = card.dataset.learnings || '';
+
+  // Build logo HTML (only rendered if a logo URL is provided)
+  const logoHtml = logo
+    ? `<img src="${logo}" alt="Project Logo" class="modal-logo">`
+    : '';
 
   // Build tag HTML
   const tagsHtml = tags.map(t => `<span>${t.trim()}</span>`).join('');
@@ -149,10 +157,15 @@ function openProjectModal(card) {
     : '';
 
   modalBody.innerHTML = `
+    ${logoHtml}
     <h2>${title}</h2>
     <p class="modal-company">${company}</p>
     <p class="modal-desc">${desc}</p>
-    <p class="modal-outcome-label">Key Outcome</p>
+    ${responsibilities ? '<p class="modal-outcome-label">Key Responsibilities</p>' : ''}
+    ${responsibilities ? '<ul class="modal-bullets">' + responsibilities.split('|').map(r => `<li>${r.trim()}</li>`).join('') + '</ul>' : ''}
+    ${learnings ? '<p class="modal-outcome-label">Key Learnings</p>' : ''}
+    ${learnings ? '<ul class="modal-bullets">' + learnings.split('|').map(l => `<li>${l.trim()}</li>`).join('') + '</ul>' : ''}
+    <p class="modal-outcome-label">Outcome</p>
     <p class="modal-outcome">${outcome}</p>
     <div class="modal-tags">${tagsHtml}</div>
     ${githubHtml}
