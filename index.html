@@ -184,7 +184,7 @@
           data-company="University of Canterbury"
           data-desc="RoboCup is a yearly robotics competition requiring fully autonomous navigation. Competitors ideate, design, build, and test robots that must navigate through obstacles, detect targets, collect them, and return them to base."
           data-tags="C++,Embedded Systems,PCB Design,Mechanical Design,Control Systems"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github="https://github.com/jaimeuydebaron/RoboCup"
           data-logo="Images/Projects/RoboCup/RoboCupRender.png"
           data-responsibilities="Led a team of three by taking on main organisational and design roles|Manufactured custom components, including laser-cut acrylic plates and a redesigned sensor mounting system|Developed structure of main program with 10+ modularised files|Debugged and improved navigational logic after countless situational tests|Integrated different mechanical movements with accurate sensor identification and software timing|Conducted testing and iterative refinement of code and hardware to improve robot reliability"
           data-learnings="Understood the requirements of being a project manager and team leader|Developed proprietary prototyping philosophy for milestone-based projects|Applied end-to-end systems engineering across mechanical, electrical, and software domains|Strengthened rapid prototyping skills under time constraints|Learned the importance of modular design for rapid debugging and maintenance|Improved real-world control system tuning and sensor integration techniques|Gained experience balancing performance, robustness, and competition constraints"
@@ -206,7 +206,7 @@
           data-company="University of Otago"
           data-desc="The University of Otago's Future Health Research Programme involves university students taking part in PhD research. My research involved Radiology-Pathology fusion with a PhD candidate. Our research improved tumour diagnostic information by aligning post-operation histology scans with pre-operation radiology volumes. An initial method (M1) used the cross product to construct the plane spanned by two vectors. I developed and implemented second and third (M2 and M3) methods for plane location. M2 used different vectors, while M3 introduced a third spline that locked a rotational degree of freedom and eliminated the uncertainties present in M1 and M2."
           data-tags="Python,CT Segmentation,3DSlicer,Medical Imaging,Research"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github="https://github.com/jaimeuydebaron/Py-OrthoRadPathFusion-M2-M3"
           data-logo="Images/Projects/FHR/FHRBone.png"
           data-responsibilities="Comprehensive literature review of previous methods and results|Segmentation of historical and current CT scans|Developing M2 following the candidate's specification|Ideating and programming M3|Testing methods M2 and M3 with canine specimens|Detailed documentation of work, thoughts, and development progress|Drafting a manuscript for publication in the Journal of Physicists, Engineers, and Scientists in Medicine"
           data-learnings="Medical terminology and operational procedure for tumour resection|Specimen handling and testing procedure in a regulated environment|Mathematical methods replicated in Python to calculate scan location|Segmentation philosophies and methods"
@@ -228,7 +228,7 @@
           data-company="University of Canterbury"
           data-desc="Designed and implemented a high-efficiency, closed-loop buck converter to regulate solar panel output for a DC motor in a solar-powered car application. The objective was to maintain operation at the panel's maximum power point (MPP) while delivering stable voltage under variable load conditions."
           data-tags="PCB Design,Power Electronics,LTSpice,Control Systems,Altium"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github="https://github.com/jaimeuydebaron/Solar-Powered-RC-Car"
           data-logo="Images/Projects/SolarCar/SolarCarWin.JPEG"
           data-responsibilities="Designed a DC-DC buck converter from first principles, including inductor sizing, air gap calculation, and capacitor selection|Developed a closed-loop feedback control system using an integrator-based PWM controller|Implemented a MOSFET-based gate driver to improve switching speed and reduce conduction losses|Designed and optimised a custom PCB layout to minimise parasitic inductance, capacitance, and switching noise|Characterised the solar panel to determine maximum power point across varying light conditions|Validated performance through oscilloscope measurements and LTSpice simulations"
           data-learnings="Applied power electronics theory to a real-world renewable energy system|Gained practical experience in magnetic component design (inductor windings, air gap sizing)|Strengthened understanding of switching losses, control stability, and ripple minimisation|Developed PCB layout strategies for high di/dt and dv/dt systems|Learned the importance of iterative testing between simulation and hardware"
@@ -250,7 +250,7 @@
           data-company="University of Canterbury"
           data-desc="Designed and built a high-speed autonomous robot incorporating custom PCB design, mechanical optimisation, and PID control. Optimised for speed and stability, achieving a best recorded time of 15.31s."
           data-tags="C,PCB Design,PID Control,Embedded Systems,KiCAD"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github=""
           data-logo="Images/Projects/LFR/LFRCAD.png"
           data-responsibilities="Designed a dual-PCB system featuring an ATmega4808, MOSFET motor drivers, and a modular sensor board|Implemented 5-sensor PID and hybrid Bang-Bang control algorithms|Optimised PCB layout for EMI reduction and high-current motor traces|Iterated on the mechanical chassis for weight distribution and corner stability"
           data-learnings="Gained hands-on experience translating control theory into real embedded hardware|Developed intuition for tuning PID systems under physical constraints|Strengthened PCB layout skills for noise-sensitive, high-current applications|Learned iterative chassis design and the impact of weight distribution on high-speed navigation"
@@ -272,7 +272,7 @@
           data-company="DOC Conservation Challenge"
           data-desc="Designed a lightweight, remotely triggered conservation gate for the Department of Conservation (DOC) to safely capture endangered Takahē. The final design was the equal national winner of the DOC Conservation Challenge."
           data-tags="Raspberry Pi,PCB Design,WiFi,Mechanical Design,Conservation"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github=""
           data-logo="Images/Projects/TakaheChallenge/DOClogo.webp"
           data-responsibilities="Engineered an aluminium rail-based drop-gate with a net capture system|Designed a WiFi-enabled PCB using a Raspberry Pi Pico W with solenoid actuation|Integrated ultrasonic safety detection to prevent unintended triggering|Delivered a full Bill of Materials under $500 against a $2,000 budget limit"
           data-learnings="Developed experience designing safety-critical systems for real-world conservation applications|Strengthened skills in low-cost embedded hardware design and wireless actuation|Gained insight into the constraints of designing for field deployment — durability, cost, and simplicity|Learned to balance engineering performance with strict budget and weight requirements"
@@ -291,21 +291,44 @@
         <!-- Project: Medical Device Reprocessing -->
         <div class="project-card" tabindex="0"
           data-title="Automated Medical Device Reprocessing"
-          data-company="Honours Project — University of Canterbury"
-          data-desc="PLACEHOLDER: Add your full project description here."
-          data-tags="Automation,Mechanical Design,Systems Engineering,Python"
-          data-github="https://github.com/jaimeuydebaron"
+          data-company="Fisher &amp; Paykel Healthcare — Honours Project"
+          data-desc="Fisher &amp; Paykel Healthcare is a New Zealand-based global leader in the design and manufacture of medical devices for respiratory care, acute care, and obstructive sleep apnea treatment. With over 50 years of experience in health technology innovation, the company challenged our team to design, build, and test a holistic medical device reprocessing machine. The project focused on reducing the manual labour required in current reprocessing workflows while accurately replicating validated cleaning and reprocessing methods for multi-use products. The system was designed to support future validation against relevant international standards, ensuring consistency, reliability, and alignment with medical device reprocessing requirements."
+          data-tags="Automation,Mechanical Design,Systems Engineering,Medical Device,Prototyping"
+          data-github=""
           data-logo="Images/Projects/FYP/FPHlogo.png"
-          data-responsibilities="PLACEHOLDER: Add key responsibilities here."
-          data-learnings="PLACEHOLDER: Add key learnings here."
-          data-outcome="PLACEHOLDER: In progress — system designed to eliminate hours of manual clinical labour.">
+          data-responsibilities="Coordinated administrative aspects of the project, including liaising with the client, supervisors, and team members to organise meetings and maintain communication.|Ideated concepts for the automatic singulation of disinfectant wipes from variable packaging formats.|Designed, prototyped, and tested mechanisms for disinfectant wipe singulation.|Produced detailed engineering drawings for key components, including the machine frame and wipe block."
+          data-learnings="Strengthened my understanding of collaborative engineering environments and how interdependent project timelines affect overall progress.|Developed a stronger appreciation of end-to-end product requirements, from concept development through to validation considerations.|Deepened my understanding of mechanical integration within automated medical device reprocessing systems."
+          data-outcome="The project is currently in progress, with ongoing design, testing, and refinement of the reprocessing system.">
           <div class="card-accent"></div>
           <div class="card-body">
-            <img src="Images/Projects/FYP/FPHlogo.png" alt="Fisher & Paykel Healthcare" class="card-logo">
+            <img src="Images/Projects/FYP/FPHlogo.png" alt="Fisher &amp; Paykel Healthcare" class="card-logo">
             <h3>Automated Medical Device Reprocessing</h3>
-            <p class="card-company">Honours Project</p>
-            <p class="card-desc">Leading a team of five to build a fully autonomous medical device reprocessing system. Eliminating hours of manual clinical labour.</p>
-            <div class="card-tags"><span>Automation</span><span>Systems Engineering</span><span>Python</span></div>
+            <p class="card-company">Fisher &amp; Paykel Healthcare — Honours Project</p>
+            <p class="card-desc">Designing and testing an automated medical device reprocessing system to reduce manual labour and improve workflow consistency.</p>
+            <div class="card-tags"><span>Automation</span><span>Mechanical Design</span><span>Medical Device</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+
+        <!-- Project: Wacky Racers -->
+        <div class="project-card" tabindex="0"
+          data-title="Wacky Racers Head-Controlled RC Car"
+          data-company="University of Canterbury"
+          data-desc="Wacky Racers is an annual embedded systems and PCB design competition centred on the development of a head-controlled RC race car. Teams are required to design, build, program, and test two custom PCBs: a hat-mounted controller board and a vehicle-mounted racer board. The racer is controlled by the tilt of the driver's head, with accelerometer data transmitted wirelessly from the hat board to the racer board. My primary focus was the racer board, which integrated motor control, radio communication, power management, low-voltage indication, status feedback, and embedded software into a compact PCB suitable for competition use."
+          data-tags="PCB Design,Embedded Systems,MCU,Radio Communication,Motor Control"
+          data-github=""
+          data-logo="Images/Projects/WackyRaces/wackyracerboard3D.png"
+          data-responsibilities="Designed the custom racer PCB, including component placement, routing, motor driver integration, radio connections, low-voltage indication, and status feedback circuitry.|Implemented embedded systems on the racer board using an MCU, including motor control, radio communication, sleep-mode behaviour, status indication, and battery monitoring.|Developed the main racer board program, enabling wireless control of motor speed and direction from the tilt-based hat controller.|Integrated H-bridge motor drivers to support directional control and variable motor duty cycles.|Supported system-level integration between the hat and racer boards to achieve end-to-end radio communication.|Reworked and debugged both boards to resolve hardware and software issues prior to competition."
+          data-learnings="Strengthened my understanding of embedded system implementation, particularly the importance of reading datasheets carefully and understanding MCU peripheral behaviour before finalising a design.|Developed a stronger understanding of PCB design trade-offs, including component density, routing complexity, trace length, silkscreen clarity, test point accessibility, and mechanical spacing constraints.|Learned practical PCB rework techniques to resolve design and assembly issues after fabrication.|Improved debugging techniques across both hardware and software, including isolating radio communication faults, motor control issues, PWM configuration problems, and power-related behaviour.|Gained experience designing for real-world manufacturability and usability, including the importance of checking both 2D and 3D board layouts before fabrication."
+          data-outcome="The final system implemented a fully controllable RC car driven by the tilt of the driver's head. The racer board achieved variable speed and directional motor control through embedded software and H-bridge integration, with end-to-end wireless communication between the hat-mounted controller and the car. Additional functionality included low-voltage indication for battery monitoring and an approximately 10 mA sleep mode to reduce energy use between races. After iterative debugging and PCB rework, the system was brought to a competition-ready state.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <img src="Images/Projects/WackyRaces/wackyracerboard3D.png" alt="Wacky Racers 3D PCB" class="card-logo">
+            <h3>Wacky Racers</h3>
+            <p class="card-company">University of Canterbury</p>
+            <p class="card-desc">Designed and programmed the racer board for a head-controlled RC car, integrating PCB design, embedded software, radio communication, and motor control.</p>
+            <div class="card-tags"><span>PCB Design</span><span>Embedded Systems</span><span>Motor Control</span></div>
           </div>
           <div class="card-footer"><span class="card-cta">View Project →</span></div>
         </div>
@@ -316,7 +339,7 @@
           data-company="Personal Project"
           data-desc="PLACEHOLDER: Add your full project description here."
           data-tags="Mechanical Design,3D Printing,CNC,Embedded Systems"
-          data-github="https://github.com/jaimeuydebaron"
+          data-github=""
           data-logo="Images/Projects/CNC/CNC.png"
           data-responsibilities="PLACEHOLDER: Add key responsibilities here."
           data-learnings="PLACEHOLDER: Add key learnings here."
