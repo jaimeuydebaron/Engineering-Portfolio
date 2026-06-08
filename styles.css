@@ -60,7 +60,7 @@ body {
   color: var(--black);
   line-height: 1.6;
   overflow-x: hidden;
-  font-weight: 500; /* Medium weight for better presence */
+  font-weight: 400; /* Regular weight */
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -72,7 +72,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── 2. TYPOGRAPHY ────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 900; /* Extra bold for thick, blocky appearance */
+  font-weight: 600; /* Bold but not too heavy */
   line-height: 1.1;
 }
 
