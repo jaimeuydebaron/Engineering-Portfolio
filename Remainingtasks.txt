@@ -1,0 +1,5 @@
+Add the rest of the photos into the project cards,
+Fix tags for project cards,
+Fix extracurriculars,
+Fix about section with job hunting goals
+Fix up stlye of webpage
