@@ -92,6 +92,7 @@ const revealTargets = [
   '.extracurr-card',
   '.section-sub',
 ];
+
 document.querySelectorAll(revealTargets.join(', ')).forEach((el, i) => {
   el.classList.add('reveal');
   // Stagger cards within a grid
@@ -134,11 +135,14 @@ function openProjectModal(card) {
   const outcome = card.dataset.outcome || '';
   const github  = card.dataset.github  || '';
   const logo    = card.dataset.logo    || '';
-  const tags    = card.dataset.tags    ? card.dataset.tags.split(',') : [];
+  const gallery = card.dataset.gallery
+    ? card.dataset.gallery.split('|').map(src => src.trim()).filter(Boolean)
+    : [];
+  const tags    = card.dataset.tags ? card.dataset.tags.split(',') : [];
   const responsibilities = card.dataset.responsibilities || '';
   const learnings = card.dataset.learnings || '';
 
-  // Build logo HTML (only rendered if a logo URL is provided)
+  // Build logo HTML
   const logoHtml = logo
     ? `<img src="${logo}" alt="Project Logo" class="modal-logo">`
     : '';
@@ -146,7 +150,7 @@ function openProjectModal(card) {
   // Build tag HTML
   const tagsHtml = tags.map(t => `<span>${t.trim()}</span>`).join('');
 
-  // Build GitHub link HTML (only rendered if a URL is provided)
+  // Build GitHub link HTML
   const githubHtml = github
     ? `<a href="${github}" target="_blank" rel="noopener" class="modal-github">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -156,23 +160,39 @@ function openProjectModal(card) {
        </a>`
     : '';
 
+  // Build project gallery HTML
+  const galleryHtml = gallery.length
+    ? `<div class="modal-gallery modal-gallery-${gallery.length}">
+        ${gallery.map((src, index) => `
+          <img src="${src}" alt="${title} project photo ${index + 1}" class="modal-gallery-img">
+        `).join('')}
+      </div>`
+    : '';
+
   modalBody.innerHTML = `
     ${logoHtml}
-    <h2>${title}</h2>
-    <p class="modal-company">${company}</p>
-    <p class="modal-desc">${desc}</p>
-    ${responsibilities ? '<p class="modal-outcome-label">Key Responsibilities</p>' : ''}
-    ${responsibilities ? '<ul class="modal-bullets">' + responsibilities.split('|').map(r => `<li>${r.trim()}</li>`).join('') + '</ul>' : ''}
-    ${learnings ? '<p class="modal-outcome-label">Key Learnings</p>' : ''}
-    ${learnings ? '<ul class="modal-bullets">' + learnings.split('|').map(l => `<li>${l.trim()}</li>`).join('') + '</ul>' : ''}
-    <p class="modal-outcome-label">Outcome</p>
-    <p class="modal-outcome">${outcome}</p>
-    <div class="modal-tags">${tagsHtml}</div>
-    ${githubHtml}
-  `;
+        <h2>${title}</h2>
+            <p class="modal-company">${company}</p>
+                <p class="modal-desc">${desc}</p>
+
+                    ${githubHtml}
+
+                        ${responsibilities ? '<p class="modal-outcome-label">Key Responsibilities</p>' : ''}
+                            ${responsibilities ? '<ul class="modal-bullets">' + responsibilities.split('|').map(r => `<li>${r.trim()}</li>`).join('') + '</ul>' : ''}
+
+                                ${learnings ? '<p class="modal-outcome-label">Key Learnings</p>' : ''}
+                                    ${learnings ? '<ul class="modal-bullets">' + learnings.split('|').map(l => `<li>${l.trim()}</li>`).join('') + '</ul>' : ''}
+
+                                        <p class="modal-outcome-label">Outcome</p>
+                                            <p class="modal-outcome">${outcome}</p>
+
+                                                ${galleryHtml}
+
+                                                    <div class="modal-tags">${tagsHtml}</div>
+                                                      `;
 
   projectModal.classList.add('modal-open');
-  document.body.style.overflow = 'hidden'; // Prevent background scroll
+  document.body.style.overflow = 'hidden';
   modalClose.focus();
 }
 
@@ -184,6 +204,7 @@ function closeProjectModal() {
 // Attach click listeners to all project cards
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => openProjectModal(card));
+
   // Keyboard accessibility: open on Enter or Space
   card.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -199,8 +220,7 @@ modalOverlay.addEventListener('click', closeProjectModal);
 
 /* ── 6. EXTRACURRICULARS MODAL ──────────────────────────────────
    Same pattern as project modal but for .extracurr-card elements.
-   Reads data-title, data-role, data-dates, data-bullets (pipe "|"
-   separated string that becomes a bullet list).
+   Reads data-title, data-role, data-dates, data-bullets.
 ──────────────────────────────────────────────────────────────── */
 const extracurrModal        = document.getElementById('extracurr-modal');
 const extracurrModalBody    = document.getElementById('extracurr-modal-body');
@@ -215,25 +235,44 @@ function openExtracurrModal(card) {
   const title   = card.dataset.title   || '';
   const role    = card.dataset.role    || '';
   const dates   = card.dataset.dates   || '';
+  const desc    = card.dataset.desc    || '';
+  const logo    = card.dataset.logo    || '';
   const bullets = card.dataset.bullets || '';
+  const gallery = card.dataset.gallery
+    ? card.dataset.gallery.split('|').map(src => src.trim()).filter(Boolean)
+    : [];
 
-  // Split pipe-separated bullets into <li> items
+  const logoHtml = logo
+    ? `<img src="${logo}" alt="${title} photo" class="modal-logo">`
+    : '';
+
   const bulletItems = bullets
     .split('|')
     .filter(b => b.trim())
     .map(b => `<li>${b.trim()}</li>`)
     .join('');
 
+  const galleryHtml = gallery.length
+    ? `<div class="modal-gallery modal-gallery-${gallery.length}">
+        ${gallery.map((src, index) => `
+          <img src="${src}" alt="${title} photo ${index + 1}" class="modal-gallery-img">
+        `).join('')}
+      </div>`
+    : '';
+
   extracurrModalBody.innerHTML = `
+    ${logoHtml}
+
     <h2>${title}</h2>
     <p class="modal-company">${role} &nbsp;·&nbsp; ${dates}</p>
+
+    ${desc ? '<p class="modal-outcome-label">About the Club</p>' : ''}
+    ${desc ? `<p class="modal-desc">${desc}</p>` : ''}
+
     <p class="modal-outcome-label">Contributions</p>
     <ul class="modal-bullets">${bulletItems}</ul>
-    <!-- 
-      PHOTO SECTION — add real photos here when ready.
-      Example:
-      <img src="images/mechtron-event.jpg" alt="Mechatronics Society event" style="width:100%;border-radius:8px;margin-top:16px;">
-    -->
+
+    ${galleryHtml}
   `;
 
   extracurrModal.classList.add('modal-open');
@@ -248,6 +287,7 @@ function closeExtracurrModal() {
 
 document.querySelectorAll('.extracurr-card').forEach(card => {
   card.addEventListener('click', () => openExtracurrModal(card));
+
   card.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();

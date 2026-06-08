@@ -415,8 +415,8 @@ blockquote p {
 }
 
 .about-photo {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   margin-top: 0;
   border-radius: 8px;
   display: block;
@@ -773,19 +773,42 @@ blockquote p {
 
 .extracurr-info {
   padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
 }
+
 .extracurr-info h3 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  margin-bottom: 2px;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
 }
+
 .extracurr-role {
-  font-size: 0.78rem;
+  font-size: 1.05rem;
   color: var(--purple);
   font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.extracurr-info .card-cta {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* Extracurricular modal main photo */
+#extracurr-modal .modal-logo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid var(--grey-light);
+  background: var(--off-white);
+  margin-bottom: 24px;
+}
+
+/* Extracurricular modal gallery */
+#extracurr-modal .modal-gallery {
+  margin-top: 28px;
 }
 
 
@@ -959,11 +982,86 @@ footer#contact {
   border: 1.5px solid var(--purple);
   padding: 10px 20px;
   border-radius: 6px;
+  margin-bottom: 24px;
   transition: background 0.2s, color 0.2s;
 }
 .modal-body .modal-github:hover {
   background: var(--purple);
   color: var(--white);
+}
+/* Project photo gallery inside modal */
+/* Project photo gallery inside modal */
+.modal-body .modal-gallery {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+/* Default image styling */
+.modal-body .modal-gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--grey-light);
+  background: var(--off-white);
+}
+
+/* One photo: render full aspect ratio */
+.modal-body .modal-gallery-1 {
+  grid-template-columns: 1fr;
+}
+
+.modal-body .modal-gallery-1 .modal-gallery-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Two photos: side by side */
+.modal-body .modal-gallery-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modal-body .modal-gallery-2 .modal-gallery-img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Three photos: first two side by side, third full-width underneath */
+.modal-body .modal-gallery-3 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modal-body .modal-gallery-3 .modal-gallery-img:nth-child(1),
+.modal-body .modal-gallery-3 .modal-gallery-img:nth-child(2) {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.modal-body .modal-gallery-3 .modal-gallery-img:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Mobile: stack all photos */
+@media (max-width: 600px) {
+  .modal-body .modal-gallery-2,
+  .modal-body .modal-gallery-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body .modal-gallery-2 .modal-gallery-img,
+  .modal-body .modal-gallery-3 .modal-gallery-img {
+    grid-column: auto;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
 }
 /* Extracurriculars modal bullet list */
 .modal-body .modal-bullets {
