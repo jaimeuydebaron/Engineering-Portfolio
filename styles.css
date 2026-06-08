@@ -20,6 +20,8 @@
    16. Responsive (Mobile)
 ================================================================ */
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap');
 
 /* ── 1. CSS VARIABLES & RESET ─────────────────────────────────── */
 :root {
@@ -35,8 +37,8 @@
   --purple-dark: #4C1D95;
 
   /* Typography */
-  --font-serif:  'Instrument Serif', Georgia, serif;
-  --font-sans:   'DM Sans', system-ui, sans-serif;
+  --font-serif:  'IBM Plex Serif', Georgia, serif;
+  --font-sans:   'Roboto', system-ui, sans-serif;
 
   /* Spacing */
   --nav-h:       64px;
@@ -58,6 +60,7 @@ body {
   color: var(--black);
   line-height: 1.6;
   overflow-x: hidden;
+  font-weight: 500; /* Medium weight for better presence */
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -69,7 +72,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── 2. TYPOGRAPHY ────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 400; /* Instrument Serif looks best at regular weight */
+  font-weight: 700; /* Bold for strong, professional presence */
   line-height: 1.1;
 }
 
