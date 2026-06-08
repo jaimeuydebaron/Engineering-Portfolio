@@ -21,7 +21,7 @@
 ================================================================ */
 
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500;600;700&display=swap');
 
 /* ── 1. CSS VARIABLES & RESET ─────────────────────────────────── */
 :root {
@@ -37,7 +37,7 @@
   --purple-dark: #4C1D95;
 
   /* Typography */
-  --font-serif:  'IBM Plex Serif', Georgia, serif;
+  --font-serif:  'Montserrat', system-ui, sans-serif;
   --font-sans:   'Roboto', system-ui, sans-serif;
 
   /* Spacing */
@@ -72,7 +72,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── 2. TYPOGRAPHY ────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 700; /* Bold for strong, professional presence */
+  font-weight: 900; /* Extra bold for thick, blocky appearance */
   line-height: 1.1;
 }
 
