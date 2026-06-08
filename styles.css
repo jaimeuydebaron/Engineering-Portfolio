@@ -384,7 +384,6 @@ p { line-height: 1.75; }
 .about-principles {
   position: sticky;
   top: calc(var(--nav-h) + 32px);
-  width: fit-content;
 }
 
 .principles-label {
@@ -418,11 +417,12 @@ blockquote p {
 .about-photo {
   width: 300px;
   height: 300px;
-  object-fit: cover;
+  margin-top: 0;
   border-radius: 8px;
   display: block;
-  flex-shrink: 0;
+  object-fit: cover;
 }
+
 
 /* ── 8. EXPERIENCE / TIMELINE ─────────────────────────────────── */
 .timeline {
