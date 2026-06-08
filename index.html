@@ -14,11 +14,6 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-       Fixed top bar with smooth-scroll links to each section.
-       Active section highlighted via JS (adds class .active).
-  ============================================================ -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo"><img src="Images/Favicon/apple-touch-icon.png" alt="Logo"></a>
@@ -47,10 +42,6 @@
   </nav>
 
 
-  <!-- ============================================================
-       HERO SECTION
-       Full-viewport opener. Name, tagline, social icons, CTA.
-  ============================================================ -->
   <section id="hero">
     <div class="hero-inner">
       <p class="hero-eyebrow">Portfolio</p>
@@ -78,10 +69,6 @@
   </section>
 
 
-  <!-- ============================================================
-       ABOUT SECTION
-       Two-column: guiding principles (left) + bio paragraph (right)
-  ============================================================ -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">About</h2>
@@ -98,17 +85,11 @@
   </section>
 
 
-  <!-- ============================================================
-       EXPERIENCE SECTION
-       Vertical timeline. To add an entry: duplicate a .timeline-item.
-       Purple vertical line connects markers automatically via CSS.
-  ============================================================ -->
   <section id="experience" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
 
-        <!-- Entry 1: Zimmer Biomet -->
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -128,7 +109,6 @@
           </div>
         </div>
 
-        <!-- Entry 2: University of Otago -->
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -147,7 +127,6 @@
           </div>
         </div>
 
-        <!-- Entry 3: Forsyth Barr -->
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -166,20 +145,11 @@
           </div>
         </div>
 
-      </div><!-- /timeline -->
+      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       PROJECTS SECTION
-       Grid of clickable cards. Each card opens a modal (via JS).
-       TO ADD A PROJECT: duplicate a .project-card div and update:
-         - data-title, data-company, data-desc, data-outcome
-         - data-tags (comma-separated)
-         - data-github (URL or "" if none)
-       Card preview tags are separate from data-tags for brevity.
-  ============================================================ -->
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Projects</h2>
@@ -190,13 +160,13 @@
         <div class="project-card" tabindex="0"
           data-title="Custom Hip Implant Approachability Tools"
           data-company="Zimmer Biomet — Ossis"
-          data-desc="Zimmer Biomet, a Fortune 500 medical device company, tasked me with developing tools to improve the approachability of implants withintheir custom hip division, Ossis. Twenty-one completed cases reported difficult-to-install implants, impacting surgical efficiency and patient outcomes. Improving implant approachability was therefore critical to bettering both surgical performance and patient care."
+          data-desc="Zimmer Biomet, a Fortune 500 medical device company, tasked me with developing tools to improve the approachability of implants within their custom hip division, Ossis. Twenty-one completed cases reported difficult-to-install implants, impacting surgical efficiency and patient outcomes. Improving implant approachability was therefore critical to bettering both surgical performance and patient care."
           data-tags="SolidWORKS,Geomagic Freeform,3D Scanning,Python,Medical Device"
           data-github=""
           data-logo="Images/Projects/ZB/Zimmer_Biomet_Holdings_Logo.jpg"
           data-responsibilities="Analyzed 500 historical surgical cases to identify trends influencing screw approachability|Developed quantitative approachability models tailored to each surgical approach|Validated models against active, work-in-progress implant designs|Produced comprehensive documentation outlining methodology, tool usage, and integration of future datapoints|Conducted 3D scanning of manufactured implants to assess underbuilding and established acceptable tolerances with suppliers"
           data-learnings="Strengthened understanding of structured R&D processes within a regulated medical device environment|Led development of a novel analytical tool in an area with no prior literature|Recognized the critical role of rigorous documentation for scalability and long-term usability|Gained insight into the orthopedic implant market and its key industry players|Developed a deeper understanding of orthopedic design philosophies and surgical constraints"
-          data-outcome="Implemented a design tool now integrated into all future custom implant workflows. Enabled realtime visualization of screw approachability during design review. Validated model predictions against previously identified approachability regions, demonstrating strong alignment with historical expert assessments.">
+          data-outcome="Implemented a design tool now integrated into all future custom implant workflows. Enabled real-time visualization of screw approachability during design review. Validated model predictions against previously identified approachability regions, demonstrating strong alignment with historical expert assessments.">
           <div class="card-accent"></div>
           <div class="card-body">
             <img src="Images/Projects/ZB/Zimmer_Biomet_Holdings_Logo.jpg" alt="Zimmer Biomet Logo" class="card-logo">
@@ -212,12 +182,16 @@
         <div class="project-card" tabindex="0"
           data-title="RoboCup Autonomous Robotics"
           data-company="University of Canterbury"
-          data-desc="PLACEHOLDER: Add your full project description here."
+          data-desc="RoboCup is a yearly robotics competition requiring fully autonomous navigation. Competitors ideate, design, build, and test robots that must navigate through obstacles, detect targets, collect them, and return them to base."
           data-tags="C++,Embedded Systems,PCB Design,Mechanical Design,Control Systems"
           data-github="https://github.com/jaimeuydebaron"
-          data-outcome="PLACEHOLDER: Robot had one of the highest autonomous return and collection rates of all competitors.">
+          data-logo="Images/Projects/RoboCup/RoboCupRender.png"
+          data-responsibilities="Led a team of three by taking on main organisational and design roles|Manufactured custom components, including laser-cut acrylic plates and a redesigned sensor mounting system|Developed structure of main program with 10+ modularised files|Debugged and improved navigational logic after countless situational tests|Integrated different mechanical movements with accurate sensor identification and software timing|Conducted testing and iterative refinement of code and hardware to improve robot reliability"
+          data-learnings="Understood the requirements of being a project manager and team leader|Developed proprietary prototyping philosophy for milestone-based projects|Applied end-to-end systems engineering across mechanical, electrical, and software domains|Strengthened rapid prototyping skills under time constraints|Learned the importance of modular design for rapid debugging and maintenance|Improved real-world control system tuning and sensor integration techniques|Gained experience balancing performance, robustness, and competition constraints"
+          data-outcome="Delivered a competition-ready robot that met all design requirements. Robot had one of the highest rates (of all competitors) of autonomous navigation back to homebase and successful collection of target objects.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/RoboCup/RoboCupRender.png" alt="RoboCup Robot" class="card-logo">
             <h3>RoboCup Autonomous Robot</h3>
             <p class="card-company">University of Canterbury</p>
             <p class="card-desc">Led a team to design and build a fully autonomous robot — one of the highest collection and return-to-base rates in the competition.</p>
@@ -230,12 +204,16 @@
         <div class="project-card" tabindex="0"
           data-title="Histology-Radiology Co-location"
           data-company="University of Otago"
-          data-desc="PLACEHOLDER: Add your full project description here."
+          data-desc="The University of Otago's Future Health Research Programme involves university students taking part in PhD research. My research involved Radiology-Pathology fusion with a PhD candidate. Our research improved tumour diagnostic information by aligning post-operation histology scans with pre-operation radiology volumes. An initial method (M1) used the cross product to construct the plane spanned by two vectors. I developed and implemented second and third (M2 and M3) methods for plane location. M2 used different vectors, while M3 introduced a third spline that locked a rotational degree of freedom and eliminated the uncertainties present in M1 and M2."
           data-tags="Python,CT Segmentation,3DSlicer,Medical Imaging,Research"
           data-github="https://github.com/jaimeuydebaron"
-          data-outcome="PLACEHOLDER: M3 method achieved 0.02 mm mean error. Manuscript submitted for journal publication.">
+          data-logo="Images/Projects/FHR/FHRBone.png"
+          data-responsibilities="Comprehensive literature review of previous methods and results|Segmentation of historical and current CT scans|Developing M2 following the candidate's specification|Ideating and programming M3|Testing methods M2 and M3 with canine specimens|Detailed documentation of work, thoughts, and development progress|Drafting a manuscript for publication in the Journal of Physicists, Engineers, and Scientists in Medicine"
+          data-learnings="Medical terminology and operational procedure for tumour resection|Specimen handling and testing procedure in a regulated environment|Mathematical methods replicated in Python to calculate scan location|Segmentation philosophies and methods"
+          data-outcome="During testing of canine dog bone samples, M1 produced a mean error of 0.12 (± 1.7) mm, M2 produced 0.06 (± 1.9) mm, while M3 produced 0.02 (± 1.5) mm. Mean errors were of similar magnitude to 3D registration error reported in histology co-registration frameworks for other tissues. This study supports a simple, low-cost opportunity for use of digital histology images to support bone sarcoma radiology interpretation and treatment planning.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/FHR/FHRBone.png" alt="Histology-Radiology Co-location" class="card-logo">
             <h3>Histology-Radiology Co-location</h3>
             <p class="card-company">University of Otago</p>
             <p class="card-desc">Novel method (M3) for tumour margin assessment achieving 0.02 mm mean error. Manuscript submitted for journal publication.</p>
@@ -248,12 +226,16 @@
         <div class="project-card" tabindex="0"
           data-title="Solar-Powered Car — Buck Converter"
           data-company="University of Canterbury"
-          data-desc="PLACEHOLDER: Add your full project description here."
+          data-desc="Designed and implemented a high-efficiency, closed-loop buck converter to regulate solar panel output for a DC motor in a solar-powered car application. The objective was to maintain operation at the panel's maximum power point (MPP) while delivering stable voltage under variable load conditions."
           data-tags="PCB Design,Power Electronics,LTSpice,Control Systems,Altium"
           data-github="https://github.com/jaimeuydebaron"
-          data-outcome="PLACEHOLDER: Fastest switching time (34 ns) and highest efficiency in cohort. Won the race.">
+          data-logo="Images/Projects/SolarCar/SolarCarWin.JPEG"
+          data-responsibilities="Designed a DC-DC buck converter from first principles, including inductor sizing, air gap calculation, and capacitor selection|Developed a closed-loop feedback control system using an integrator-based PWM controller|Implemented a MOSFET-based gate driver to improve switching speed and reduce conduction losses|Designed and optimised a custom PCB layout to minimise parasitic inductance, capacitance, and switching noise|Characterised the solar panel to determine maximum power point across varying light conditions|Validated performance through oscilloscope measurements and LTSpice simulations"
+          data-learnings="Applied power electronics theory to a real-world renewable energy system|Gained practical experience in magnetic component design (inductor windings, air gap sizing)|Strengthened understanding of switching losses, control stability, and ripple minimisation|Developed PCB layout strategies for high di/dt and dv/dt systems|Learned the importance of iterative testing between simulation and hardware"
+          data-outcome="Delivered a functional buck converter capable of stable voltage regulation under varying solar input and load conditions. Achieved low output voltage ripple and a fast switching response of 34 ns — the fastest switching time and highest efficiency in the entire cohort. Won the solar car race competition with a large gap to second place.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/SolarCar/SolarCarWin.JPEG" alt="Solar Car Win" class="card-logo">
             <h3>Solar-Powered Car</h3>
             <p class="card-company">University of Canterbury</p>
             <p class="card-desc">High-efficiency closed-loop buck converter — fastest switching time (34 ns) and highest efficiency in the cohort. Won the race.</p>
@@ -266,12 +248,16 @@
         <div class="project-card" tabindex="0"
           data-title="Line Following Robot"
           data-company="University of Canterbury"
-          data-desc="PLACEHOLDER: Add your full project description here."
+          data-desc="Designed and built a high-speed autonomous robot incorporating custom PCB design, mechanical optimisation, and PID control. Optimised for speed and stability, achieving a best recorded time of 15.31s."
           data-tags="C,PCB Design,PID Control,Embedded Systems,KiCAD"
           data-github="https://github.com/jaimeuydebaron"
-          data-outcome="PLACEHOLDER: Best recorded time of 15.31s.">
+          data-logo="Images/Projects/LFR/LFRCAD.png"
+          data-responsibilities="Designed a dual-PCB system featuring an ATmega4808, MOSFET motor drivers, and a modular sensor board|Implemented 5-sensor PID and hybrid Bang-Bang control algorithms|Optimised PCB layout for EMI reduction and high-current motor traces|Iterated on the mechanical chassis for weight distribution and corner stability"
+          data-learnings="Gained hands-on experience translating control theory into real embedded hardware|Developed intuition for tuning PID systems under physical constraints|Strengthened PCB layout skills for noise-sensitive, high-current applications|Learned iterative chassis design and the impact of weight distribution on high-speed navigation"
+          data-outcome="Achieved a best recorded time of 15.31s, delivering a competition-ready robot with excellent speed and stability through the combination of a custom dual-PCB system and hybrid PID/Bang-Bang control.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/LFR/LFRCAD.png" alt="Line Following Robot" class="card-logo">
             <h3>Line Following Robot</h3>
             <p class="card-company">University of Canterbury</p>
             <p class="card-desc">High-speed autonomous robot with custom dual-PCB and hybrid PID/Bang-Bang control. Best time: 15.31s.</p>
@@ -284,12 +270,16 @@
         <div class="project-card" tabindex="0"
           data-title="Takahē Recovery Gate"
           data-company="DOC Conservation Challenge"
-          data-desc="PLACEHOLDER: Add your full project description here."
+          data-desc="Designed a lightweight, remotely triggered conservation gate for the Department of Conservation (DOC) to safely capture endangered Takahē. The final design was the equal national winner of the DOC Conservation Challenge."
           data-tags="Raspberry Pi,PCB Design,WiFi,Mechanical Design,Conservation"
           data-github="https://github.com/jaimeuydebaron"
-          data-outcome="PLACEHOLDER: Equal national winner. Full BOM delivered under $500.">
+          data-logo="Images/Projects/TakaheChallenge/DOClogo.webp"
+          data-responsibilities="Engineered an aluminium rail-based drop-gate with a net capture system|Designed a WiFi-enabled PCB using a Raspberry Pi Pico W with solenoid actuation|Integrated ultrasonic safety detection to prevent unintended triggering|Delivered a full Bill of Materials under $500 against a $2,000 budget limit"
+          data-learnings="Developed experience designing safety-critical systems for real-world conservation applications|Strengthened skills in low-cost embedded hardware design and wireless actuation|Gained insight into the constraints of designing for field deployment — durability, cost, and simplicity|Learned to balance engineering performance with strict budget and weight requirements"
+          data-outcome="Final design was the equal national winner of the DOC Takahē Conservation Challenge. Full BOM delivered under $500 against a $2,000 budget limit, demonstrating exceptional cost efficiency without compromising functionality.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/TakaheChallenge/DOClogo.webp" alt="DOC" class="card-logo">
             <h3>Takahē Recovery Gate</h3>
             <p class="card-company">DOC Conservation Challenge</p>
             <p class="card-desc">Remotely triggered conservation gate for capturing endangered Takahē. Equal national winner. Full BOM under $500.</p>
@@ -305,12 +295,16 @@
           data-desc="PLACEHOLDER: Add your full project description here."
           data-tags="Automation,Mechanical Design,Systems Engineering,Python"
           data-github="https://github.com/jaimeuydebaron"
+          data-logo="Images/Projects/FYP/FPHlogo.png"
+          data-responsibilities="PLACEHOLDER: Add key responsibilities here."
+          data-learnings="PLACEHOLDER: Add key learnings here."
           data-outcome="PLACEHOLDER: In progress — system designed to eliminate hours of manual clinical labour.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/FYP/FPHlogo.png" alt="Fisher & Paykel Healthcare" class="card-logo">
             <h3>Automated Medical Device Reprocessing</h3>
             <p class="card-company">Honours Project</p>
-            <p class="card-desc">Leading a team of five to build a fully autonomous medical device reprocessing system — eliminating hours of manual clinical labour.</p>
+            <p class="card-desc">Leading a team of five to build a fully autonomous medical device reprocessing system. Eliminating hours of manual clinical labour.</p>
             <div class="card-tags"><span>Automation</span><span>Systems Engineering</span><span>Python</span></div>
           </div>
           <div class="card-footer"><span class="card-cta">View Project →</span></div>
@@ -323,9 +317,13 @@
           data-desc="PLACEHOLDER: Add your full project description here."
           data-tags="Mechanical Design,3D Printing,CNC,Embedded Systems"
           data-github="https://github.com/jaimeuydebaron"
+          data-logo="Images/Projects/CNC/CNC.png"
+          data-responsibilities="PLACEHOLDER: Add key responsibilities here."
+          data-learnings="PLACEHOLDER: Add key learnings here."
           data-outcome="PLACEHOLDER: 196mm x 196mm working area. Total build cost $208.92. Full assembly in 50 minutes.">
           <div class="card-accent"></div>
           <div class="card-body">
+            <img src="Images/Projects/CNC/CNC.png" alt="CNC Pick-and-Place" class="card-logo">
             <h3>CNC Pick-and-Place Machine</h3>
             <p class="card-company">Personal Project</p>
             <p class="card-desc">Compact hobbyist pick-and-place with 196mm × 196mm working area. Total build cost: $208.92. Full assembly in 50 minutes.</p>
@@ -334,16 +332,11 @@
           <div class="card-footer"><span class="card-cta">View Project →</span></div>
         </div>
 
-      </div><!-- /projects-grid -->
+      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       SKILLS SECTION
-       Grouped tag grid. To add a skill: add a <span> to a group.
-       To add a group: duplicate a .skill-group div.
-  ============================================================ -->
   <section id="skills" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Skills</h2>
@@ -397,22 +390,16 @@
           </div>
         </div>
 
-      </div><!-- /skills-grid -->
+      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       EDUCATION SECTION
-       Two side-by-side cards. To edit: update the content within
-       each .education-card div.
-  ============================================================ -->
   <section id="education" class="section">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="education-grid">
 
-        <!-- University of Canterbury -->
         <div class="education-card">
           <div class="edu-year">2023 – 2026</div>
           <h3 class="edu-institution">University of Canterbury</h3>
@@ -424,7 +411,6 @@
           </ul>
         </div>
 
-        <!-- Auckland Grammar School -->
         <div class="education-card">
           <div class="edu-year">2018 – 2022</div>
           <h3 class="edu-institution">Auckland Grammar School</h3>
@@ -439,34 +425,22 @@
           </ul>
         </div>
 
-      </div><!-- /education-grid -->
+      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       EXTRACURRICULARS SECTION
-       Same card-and-modal pattern as Projects.
-       Each card front: club name, role, team photo placeholder.
-       Modal: bullet points of contributions + event photos.
-       TO ADD A CLUB: duplicate a .extracurr-card block and update:
-         - data-title, data-role, data-dates
-         - data-bullets (pipe-separated bullet points)
-       Replace .extracurr-photo-placeholder with a real <img> tag.
-  ============================================================ -->
   <section id="extracurriculars" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Extracurriculars</h2>
       <p class="section-sub">Click any card to see contributions and highlights.</p>
       <div class="extracurr-grid">
 
-        <!-- Club: Mechatronics Society -->
         <div class="extracurr-card" tabindex="0"
           data-title="Mechatronics Society"
           data-role="President (Former Treasurer)"
           data-dates="2024 – Present"
           data-bullets="Provide strategic and financial leadership across the society.|Expanded event portfolio under a $500 base budget.|Founded and led the nationwide UC Engineering Challenge — $6,000 in sponsorship, 320 participants, 70 technical submissions.|Launched Internships 101, Meet Mechatronics, and the UC Pitching Competition.">
-          <!-- REPLACE this placeholder div with: <img src="images/mechtron-team.jpg" alt="Mechatronics Society team"> -->
           <div class="extracurr-photo-placeholder"><span>Team Photo</span></div>
           <div class="extracurr-info">
             <h3>Mechatronics Society</h3>
@@ -475,7 +449,6 @@
           </div>
         </div>
 
-        <!-- Club: Lads Without Labels -->
         <div class="extracurr-card" tabindex="0"
           data-title="Lads Without Labels"
           data-role="Treasurer"
@@ -489,7 +462,6 @@
           </div>
         </div>
 
-        <!-- Club: Student Volunteer Army -->
         <div class="extracurr-card" tabindex="0"
           data-title="Student Volunteer Army"
           data-role="Marketing Manager (Former Treasurer)"
@@ -503,15 +475,11 @@
           </div>
         </div>
 
-      </div><!-- /extracurr-grid -->
+      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       CONTACT / FOOTER
-       Direct contact details. No form — links only.
-  ============================================================ -->
   <footer id="contact">
     <div class="container">
       <h2 class="footer-heading">Get In Touch</h2>
@@ -539,34 +507,21 @@
   </footer>
 
 
-  <!-- ============================================================
-       PROJECT MODAL
-       Shared modal for all project cards.
-       Content is injected dynamically by script.js on card click.
-       Structure: title, company, description, outcome, tags, link.
-  ============================================================ -->
   <div id="project-modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="modal-panel">
       <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
-      <div class="modal-body" id="modal-body"><!-- Injected by JS --></div>
+      <div class="modal-body" id="modal-body"></div>
     </div>
   </div>
 
-
-  <!-- ============================================================
-       EXTRACURRICULARS MODAL
-       Separate modal instance for club cards.
-       Content injected by script.js on card click.
-  ============================================================ -->
   <div id="extracurr-modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-overlay" id="extracurr-modal-overlay"></div>
     <div class="modal-panel">
       <button class="modal-close" id="extracurr-modal-close" aria-label="Close modal">✕</button>
-      <div class="modal-body" id="extracurr-modal-body"><!-- Injected by JS --></div>
+      <div class="modal-body" id="extracurr-modal-body"></div>
     </div>
   </div>
-
 
   <script src="script.js"></script>
 </body>
