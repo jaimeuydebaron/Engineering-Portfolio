@@ -3,101 +3,571 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello, Jaime</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <title>Jaime Uy De Baron</title>
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0a0a0a;
-      overflow: hidden;
-    }
+  <!-- Google Fonts: Instrument Serif (headings) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-
-    .glow {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99,200,255,0.08) 0%, transparent 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .container {
-      position: relative;
-      text-align: center;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    .label {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      font-size: 0.85rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 1rem;
-      animation: fadeUp 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 18vw, 14rem);
-      line-height: 0.9;
-      color: #fff;
-      letter-spacing: 0.02em;
-      text-shadow:
-        0 0 80px rgba(99,200,255,0.25),
-        0 0 160px rgba(99,200,255,0.1);
-      animation: fadeUp 1s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    h1 span {
-      color: #63C8FF;
-    }
-
-    .line {
-      width: 40px;
-      height: 2px;
-      background: #63C8FF;
-      margin: 1.5rem auto 0;
-      animation: expand 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes expand {
-      from { width: 0; opacity: 0; }
-      to   { width: 40px; opacity: 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="glow"></div>
-  <div class="container">
-    <p class="label">Welcome</p>
-    <h1>Hello, <span>Jaime</span></h1>
-    <div class="line"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       Fixed top bar with smooth-scroll links to each section.
+       Active section highlighted via JS (adds class .active).
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">JUB</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#extracurriculars">Extracurriculars</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="nav-mobile" id="nav-mobile">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#extracurriculars">Extracurriculars</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       Full-viewport opener. Name, tagline, social icons, CTA.
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Portfolio</p>
+      <h1 class="hero-name">Jaime<br/>Uy De Baron</h1>
+      <p class="hero-tagline">
+        Assistant Analyst&nbsp;@&nbsp;Forsyth Barr&nbsp;&nbsp;|&nbsp;&nbsp;Ex Zimmer Biomet&nbsp;&nbsp;|&nbsp;&nbsp;Final Year Mechatronics Engineering&nbsp;@&nbsp;University of Canterbury
+      </p>
+      <div class="hero-links">
+        <a href="mailto:j.uydebaron@gmail.com" class="hero-icon-link" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </a>
+        <a href="tel:+64223205437" class="hero-icon-link" aria-label="Phone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/jaimeuydebaron" target="_blank" rel="noopener" class="hero-icon-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/jaimeuydebaron" target="_blank" rel="noopener" class="hero-icon-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+      <a href="#projects" class="btn-primary">See My Work</a>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Two-column: guiding principles (left) + bio paragraph (right)
+  ============================================================ -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-principles">
+          <p class="principles-label">Guiding Principles</p>
+          <blockquote>
+            <p>Effect meaningful change.</p>
+            <p>Be part of bigger things.</p>
+          </blockquote>
+        </div>
+        <div class="about-bio">
+          <p>I'm a final-year Mechatronics Engineering student at the University of Canterbury with a passion for the biomedical industry — a space where engineering excellence directly improves people's lives. I've worked across orthopaedic implant design at Zimmer Biomet, cancer research at the University of Otago, and equity markets at Forsyth Barr, bringing the same approach to every environment: rigorous, documented, and outcome-driven.</p>
+          <p>Outside of engineering, I lead student organisations, run ultramarathons for charity, and coordinate disaster relief efforts. I'm at my best in fast-moving environments where the stakes are real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EXPERIENCE SECTION
+       Vertical timeline. To add an entry: duplicate a .timeline-item.
+       Purple vertical line connects markers automatically via CSS.
+  ============================================================ -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+
+        <!-- Entry 1: Zimmer Biomet -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Design Engineer Intern</h3>
+                <p class="timeline-company">Zimmer Biomet — Ossis Custom Hip Division</p>
+              </div>
+              <span class="timeline-dates">Nov 2025 – Feb 2026</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed standardised reference tools to enhance custom hip implant design, focusing on flange placement and screw trajectory for minimal-incision approaches.</li>
+              <li>Analysed 400+ total hip arthroplasty cases to quantify average skin depth across surgical approaches, informing accessibility constraints.</li>
+              <li>Conducted 3D scanning and mesh analysis of post-print titanium implants to establish evidence-based underbuild tolerances with manufacturing partners.</li>
+              <li>Gained broad exposure to orthopaedic implant design principles across hip, knee, and shoulder product lines.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entry 2: University of Otago -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">PhD Support Researcher</h3>
+                <p class="timeline-company">University of Otago, Christchurch</p>
+              </div>
+              <span class="timeline-dates">Nov 2024 – Feb 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed a methodology to improve tumour margin assessment by correlating high-resolution histology with low-resolution CT imaging.</li>
+              <li>Proposed and validated a novel method (M3) achieving a mean error of 0.02 mm — superior to prior techniques at 0.12 mm and 0.06 mm.</li>
+              <li>Authored a scientific manuscript currently in revision for publication in the Australian College of Physicists, Engineers, and Scientists in Medicine journal.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Entry 3: Forsyth Barr -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Assistant Analyst</h3>
+                <p class="timeline-company">Forsyth Barr Investment Bank</p>
+              </div>
+              <span class="timeline-dates">Dec 2023 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Author of the Morning News Summary — a published daily briefing on overnight global equity activity covering earnings releases, macro drivers, and stock movements.</li>
+              <li>Conduct research across US, European, Asian, and Australian markets; deliver concise briefings for an 8:00 am adviser meeting.</li>
+              <li>Maintain and optimise complex Excel-based databases tracking domestic equities and historical share price data for adviser and external use.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROJECTS SECTION
+       Grid of clickable cards. Each card opens a modal (via JS).
+       TO ADD A PROJECT: duplicate a .project-card div and update:
+         - data-title, data-company, data-desc, data-outcome
+         - data-tags (comma-separated)
+         - data-github (URL or "" if none)
+       Card preview tags are separate from data-tags for brevity.
+  ============================================================ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Click any card to see full details, photos, and links.</p>
+      <div class="projects-grid">
+
+        <!-- Project: Custom Hip Implant Tools -->
+        <div class="project-card" tabindex="0"
+          data-title="Custom Hip Implant Approachability Tools"
+          data-company="Zimmer Biomet — Ossis"
+          data-desc="PLACEHOLDER: Add your full project description here. Describe the clinical problem, your engineering approach, tools used, and what made it technically interesting."
+          data-tags="SolidWORKS,Geomagic Freeform,3D Scanning,Python,Medical Device"
+          data-github=""
+          data-outcome="PLACEHOLDER: Describe key outcomes — the tool is now integrated into all future custom implant workflows at Zimmer Biomet.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Custom Hip Implant Tools</h3>
+            <p class="card-company">Zimmer Biomet — Ossis</p>
+            <p class="card-desc">Developed design tools now integrated into all custom hip implant workflows at a Fortune 500 medical device company.</p>
+            <div class="card-tags"><span>SolidWORKS</span><span>3D Scanning</span><span>Medical Device</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: RoboCup -->
+        <div class="project-card" tabindex="0"
+          data-title="RoboCup Autonomous Robotics"
+          data-company="University of Canterbury"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="C++,Embedded Systems,PCB Design,Mechanical Design,Control Systems"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: Robot had one of the highest autonomous return and collection rates of all competitors.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>RoboCup Autonomous Robot</h3>
+            <p class="card-company">University of Canterbury</p>
+            <p class="card-desc">Led a team to design and build a fully autonomous robot — one of the highest collection and return-to-base rates in the competition.</p>
+            <div class="card-tags"><span>C++</span><span>Embedded</span><span>PCB Design</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: Histology-Radiology -->
+        <div class="project-card" tabindex="0"
+          data-title="Histology-Radiology Co-location"
+          data-company="University of Otago"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="Python,CT Segmentation,3DSlicer,Medical Imaging,Research"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: M3 method achieved 0.02 mm mean error. Manuscript submitted for journal publication.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Histology-Radiology Co-location</h3>
+            <p class="card-company">University of Otago</p>
+            <p class="card-desc">Novel method (M3) for tumour margin assessment achieving 0.02 mm mean error. Manuscript submitted for journal publication.</p>
+            <div class="card-tags"><span>Python</span><span>CT Imaging</span><span>Research</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: Solar Car -->
+        <div class="project-card" tabindex="0"
+          data-title="Solar-Powered Car — Buck Converter"
+          data-company="University of Canterbury"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="PCB Design,Power Electronics,LTSpice,Control Systems,Altium"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: Fastest switching time (34 ns) and highest efficiency in cohort. Won the race.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Solar-Powered Car</h3>
+            <p class="card-company">University of Canterbury</p>
+            <p class="card-desc">High-efficiency closed-loop buck converter — fastest switching time (34 ns) and highest efficiency in the cohort. Won the race.</p>
+            <div class="card-tags"><span>PCB Design</span><span>Power Electronics</span><span>Altium</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: Line Following Robot -->
+        <div class="project-card" tabindex="0"
+          data-title="Line Following Robot"
+          data-company="University of Canterbury"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="C,PCB Design,PID Control,Embedded Systems,KiCAD"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: Best recorded time of 15.31s.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Line Following Robot</h3>
+            <p class="card-company">University of Canterbury</p>
+            <p class="card-desc">High-speed autonomous robot with custom dual-PCB and hybrid PID/Bang-Bang control. Best time: 15.31s.</p>
+            <div class="card-tags"><span>C</span><span>PID Control</span><span>KiCAD</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: Takahē Gate -->
+        <div class="project-card" tabindex="0"
+          data-title="Takahē Recovery Gate"
+          data-company="DOC Conservation Challenge"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="Raspberry Pi,PCB Design,WiFi,Mechanical Design,Conservation"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: Equal national winner. Full BOM delivered under $500.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Takahē Recovery Gate</h3>
+            <p class="card-company">DOC Conservation Challenge</p>
+            <p class="card-desc">Remotely triggered conservation gate for capturing endangered Takahē. Equal national winner. Full BOM under $500.</p>
+            <div class="card-tags"><span>Raspberry Pi</span><span>PCB Design</span><span>Conservation</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: Medical Device Reprocessing -->
+        <div class="project-card" tabindex="0"
+          data-title="Automated Medical Device Reprocessing"
+          data-company="Honours Project — University of Canterbury"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="Automation,Mechanical Design,Systems Engineering,Python"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: In progress — system designed to eliminate hours of manual clinical labour.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>Automated Medical Device Reprocessing</h3>
+            <p class="card-company">Honours Project</p>
+            <p class="card-desc">Leading a team of five to build a fully autonomous medical device reprocessing system — eliminating hours of manual clinical labour.</p>
+            <div class="card-tags"><span>Automation</span><span>Systems Engineering</span><span>Python</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+        <!-- Project: CNC Pick-and-Place -->
+        <div class="project-card" tabindex="0"
+          data-title="CNC Pick-and-Place Machine"
+          data-company="Personal Project"
+          data-desc="PLACEHOLDER: Add your full project description here."
+          data-tags="Mechanical Design,3D Printing,CNC,Embedded Systems"
+          data-github="https://github.com/jaimeuydebaron"
+          data-outcome="PLACEHOLDER: 196mm x 196mm working area. Total build cost $208.92. Full assembly in 50 minutes.">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <h3>CNC Pick-and-Place Machine</h3>
+            <p class="card-company">Personal Project</p>
+            <p class="card-desc">Compact hobbyist pick-and-place with 196mm × 196mm working area. Total build cost: $208.92. Full assembly in 50 minutes.</p>
+            <div class="card-tags"><span>Mechanical Design</span><span>3D Printing</span><span>CNC</span></div>
+          </div>
+          <div class="card-footer"><span class="card-cta">View Project →</span></div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SKILLS SECTION
+       Grouped tag grid. To add a skill: add a <span> to a group.
+       To add a group: duplicate a .skill-group div.
+  ============================================================ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Software & Programming</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>C / C++</span><span>Ladder Logic</span>
+            <span>Structured Text</span><span>MATLAB</span><span>Excel (Advanced)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Hardware & Electronics</h3>
+          <div class="skill-tags">
+            <span>PCB Design (Altium)</span><span>KiCAD</span><span>Embedded Systems</span>
+            <span>Power Electronics</span><span>Control Systems</span><span>Sensor Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">CAD & Design</h3>
+          <div class="skill-tags">
+            <span>SolidWORKS</span><span>Geomagic Freeform Plus</span>
+            <span>SketchUp</span><span>LTSpice</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Medical & Research Tools</h3>
+          <div class="skill-tags">
+            <span>3DSlicer</span><span>Mimics</span><span>CT Scan Segmentation</span>
+            <span>3D Scanning</span><span>Mesh Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Fabrication</h3>
+          <div class="skill-tags">
+            <span>Laser Cutting</span><span>3D Printing</span>
+            <span>Turning (Lathe)</span><span>Sheet Metal</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Soft Skills</h3>
+          <div class="skill-tags">
+            <span>Technical Documentation</span><span>Team Leadership</span>
+            <span>Research & Analysis</span><span>Project Management</span>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EDUCATION SECTION
+       Two side-by-side cards. To edit: update the content within
+       each .education-card div.
+  ============================================================ -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+
+        <!-- University of Canterbury -->
+        <div class="education-card">
+          <div class="edu-year">2023 – 2026</div>
+          <h3 class="edu-institution">University of Canterbury</h3>
+          <p class="edu-degree">Bachelor of Engineering with Honours</p>
+          <p class="edu-major">Mechatronics Engineering</p>
+          <ul class="edu-details">
+            <li><strong>GPA:</strong> 8.20 / 9.00</li>
+            <li><strong>Scholarship:</strong> UC Hiranga Scholarship</li>
+            <li>Relevant courses: Embedded Systems, Computer Vision, Robotics, Controls, Fluid Mechanics, Power Electronics, Engineering Economics</li>
+          </ul>
+        </div>
+
+        <!-- Auckland Grammar School -->
+        <div class="education-card">
+          <div class="edu-year">2018 – 2022</div>
+          <h3 class="edu-institution">Auckland Grammar School</h3>
+          <p class="edu-degree">Cambridge A Levels</p>
+          <p class="edu-major">Physics · Business · Economics</p>
+          <ul class="edu-details">
+            <li><strong>Physics:</strong> 91%</li>
+            <li><strong>Business:</strong> 94%</li>
+            <li><strong>Economics:</strong> 88%</li>
+            <li>Prizes in Business Studies, Economics, and Spanish</li>
+          </ul>
+        </div>
+
+      </div><!-- /education-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EXTRACURRICULARS SECTION
+       Same card-and-modal pattern as Projects.
+       Each card front: club name, role, team photo placeholder.
+       Modal: bullet points of contributions + event photos.
+       TO ADD A CLUB: duplicate a .extracurr-card block and update:
+         - data-title, data-role, data-dates
+         - data-bullets (pipe-separated bullet points)
+       Replace .extracurr-photo-placeholder with a real <img> tag.
+  ============================================================ -->
+  <section id="extracurriculars" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Extracurriculars</h2>
+      <p class="section-sub">Click any card to see contributions and highlights.</p>
+      <div class="extracurr-grid">
+
+        <!-- Club: Mechatronics Society -->
+        <div class="extracurr-card" tabindex="0"
+          data-title="Mechatronics Society"
+          data-role="President (Former Treasurer)"
+          data-dates="2024 – Present"
+          data-bullets="Provide strategic and financial leadership across the society.|Expanded event portfolio under a $500 base budget.|Founded and led the nationwide UC Engineering Challenge — $6,000 in sponsorship, 320 participants, 70 technical submissions.|Launched Internships 101, Meet Mechatronics, and the UC Pitching Competition.">
+          <!-- REPLACE this placeholder div with: <img src="images/mechtron-team.jpg" alt="Mechatronics Society team"> -->
+          <div class="extracurr-photo-placeholder"><span>Team Photo</span></div>
+          <div class="extracurr-info">
+            <h3>Mechatronics Society</h3>
+            <p class="extracurr-role">President</p>
+            <span class="card-cta">View →</span>
+          </div>
+        </div>
+
+        <!-- Club: Lads Without Labels -->
+        <div class="extracurr-card" tabindex="0"
+          data-title="Lads Without Labels"
+          data-role="Treasurer"
+          data-dates="2024 – 2025"
+          data-bullets="Managed $200,000+ in assets.|Oversaw GST filing, charity compliance, budgeting, and financial reporting.|Contributed to brand growth and strategic expansion to additional universities.">
+          <div class="extracurr-photo-placeholder"><span>Team Photo</span></div>
+          <div class="extracurr-info">
+            <h3>Lads Without Labels</h3>
+            <p class="extracurr-role">Treasurer</p>
+            <span class="card-cta">View →</span>
+          </div>
+        </div>
+
+        <!-- Club: Student Volunteer Army -->
+        <div class="extracurr-card" tabindex="0"
+          data-title="Student Volunteer Army"
+          data-role="Marketing Manager (Former Treasurer)"
+          data-dates="2024 – Present"
+          data-bullets="Managed $30,000 in assets and finance operations before transitioning to marketing leadership.|Coordinated disaster relief operations across Nelson, Hawke's Bay, and Banks Peninsula.|Directed marketing for large-scale initiatives including the Big Give — 500 volunteers mobilised.|Raised $2,400 for flood victims in Wairoa.">
+          <div class="extracurr-photo-placeholder"><span>Team Photo</span></div>
+          <div class="extracurr-info">
+            <h3>Student Volunteer Army</h3>
+            <p class="extracurr-role">Marketing Manager</p>
+            <span class="card-cta">View →</span>
+          </div>
+        </div>
+
+      </div><!-- /extracurr-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT / FOOTER
+       Direct contact details. No form — links only.
+  ============================================================ -->
+  <footer id="contact">
+    <div class="container">
+      <h2 class="footer-heading">Get In Touch</h2>
+      <p class="footer-sub">Open to opportunities in biomedical engineering, robotics, and research.</p>
+      <div class="contact-links">
+        <a href="mailto:j.uydebaron@gmail.com" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <span>j.uydebaron@gmail.com</span>
+        </a>
+        <a href="tel:+64223205437" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          <span>+64 22 320 5437</span>
+        </a>
+        <a href="https://linkedin.com/in/jaimeuydebaron" target="_blank" rel="noopener" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>linkedin.com/in/jaimeuydebaron</span>
+        </a>
+        <a href="https://github.com/jaimeuydebaron" target="_blank" rel="noopener" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>github.com/jaimeuydebaron</span>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Jaime Uy De Baron. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       PROJECT MODAL
+       Shared modal for all project cards.
+       Content is injected dynamically by script.js on card click.
+       Structure: title, company, description, outcome, tags, link.
+  ============================================================ -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-body" id="modal-body"><!-- Injected by JS --></div>
+    </div>
   </div>
+
+
+  <!-- ============================================================
+       EXTRACURRICULARS MODAL
+       Separate modal instance for club cards.
+       Content injected by script.js on card click.
+  ============================================================ -->
+  <div id="extracurr-modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-overlay" id="extracurr-modal-overlay"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="extracurr-modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-body" id="extracurr-modal-body"><!-- Injected by JS --></div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
