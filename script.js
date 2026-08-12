@@ -134,6 +134,7 @@ function openProjectModal(card) {
   const desc    = card.dataset.desc    || '';
   const outcome = card.dataset.outcome || '';
   const github  = card.dataset.github  || '';
+  const publication = card.dataset.publication || '';
   const logo    = card.dataset.logo    || '';
   const gallery = card.dataset.gallery
     ? card.dataset.gallery.split('|').map(src => src.trim()).filter(Boolean)
@@ -160,6 +161,17 @@ function openProjectModal(card) {
        </a>`
     : '';
 
+  // Build publication link HTML
+  const publicationHtml = publication
+    ? `<a href="${publication}" target="_blank" rel="noopener" class="modal-publication">
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+         </svg>
+         View Publication
+       </a>`
+    : '';
+
   // Build project gallery HTML
   const galleryHtml = gallery.length
     ? `<div class="modal-gallery modal-gallery-${gallery.length}">
@@ -175,7 +187,7 @@ function openProjectModal(card) {
             <p class="modal-company">${company}</p>
                 <p class="modal-desc">${desc}</p>
 
-                    ${githubHtml}
+                    <div class="modal-links">${githubHtml}${publicationHtml}</div>
 
                         ${responsibilities ? '<p class="modal-outcome-label">Key Responsibilities</p>' : ''}
                             ${responsibilities ? '<ul class="modal-bullets">' + responsibilities.split('|').map(r => `<li>${r.trim()}</li>`).join('') + '</ul>' : ''}
